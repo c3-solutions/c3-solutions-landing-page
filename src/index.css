@@ -1,0 +1,10 @@
+:root {
+  --main-color-one: rgb(255, 0, 0);
+  --main-color-two: rgb(0, 149, 255);
+  --main-color-three: rgb(0, 0, 0);
+}
+
+html,
+body {
+  margin: 0;
+}
