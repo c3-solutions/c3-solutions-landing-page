@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/App.css";
 import styled from "styled-components";
-import GHpng from "../assets/images/GitHub_Logo.png"
-import c3logo from "../assets/images/c3.png"
+import GHpng from "../assets/images/GitHub_Logo.png";
+import c3logo from "../assets/images/c3.png";
 
 const Card = styled.div`
   border: thin black solid;
@@ -25,12 +25,12 @@ const Info = styled.div`
   height: 100%;
   padding: 1em;
   width: 70%;
-`
+`;
 
 const Name = styled.h3`
   font-family: sans-serif;
   font-weight: bold;
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
   text-transform: uppercase;
 `;
 
@@ -63,10 +63,7 @@ const RosterCard = props => {
   let { fullname, pic, note, github, website } = props;
   return (
     <Card>
-      <Image
-        src={pic ? pic : c3logo}
-        alt={`${fullname}'s profile`}
-        />
+      <Image src={pic ? pic : c3logo} alt={`${fullname}'s profile`} />
       <Info>
         <Name>{fullname}</Name>
         <Note>{note}</Note>
