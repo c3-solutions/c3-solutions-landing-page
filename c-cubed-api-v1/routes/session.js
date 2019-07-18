@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const axios = require('axios')
+const axios = require('axios');
+const conf = require('../config.js')
 
 router.get("/session/callback", async (req, res, next) => {
   const { query } = req;
@@ -21,8 +22,8 @@ router.get("/session/callback", async (req, res, next) => {
       url: 'https://github.com/login/oauth/access_token',
       headers: {'Accept': 'application/json'},
       params: {
-        client_id: 'd240d9f9a8908bc39b20',
-        client_secret: '694ad749c46f06f86249883a993815317057621f',
+        client_id: conf.client_id,
+        client_secret: conf.client_secret,
         code: code
       },
       validateStatus: function (status) {
@@ -53,7 +54,7 @@ router.get("/users", async (req, res, next) => {
     const response = await axios({
       method: 'get',
       url: 'https://api.github.com/user',
-      headers: {'Authorization': `token cf5f02da515b44b97035bd735a3c77dd4f8552a2`},
+      headers: {'Authorization': `token ${'place token here'}`},
       validateStatus: function (status) {
         return status < 600;
       }

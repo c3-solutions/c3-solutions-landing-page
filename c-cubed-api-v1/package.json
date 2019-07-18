@@ -4,7 +4,12 @@
   "description": "API",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "db:create": "createdb -e c-cubed",
+    "db:drop": "dropdb --if-exist -e c-cubed",
+    "db:migrate": "knex migrate:latest",
+    "db:reset": "npm run db:drop && npm run db:create && npm run db:migrate",
+    "redis": "redis-server /usr/local/etc/redis.conf"
   },
   "author": "",
   "license": "ISC",
