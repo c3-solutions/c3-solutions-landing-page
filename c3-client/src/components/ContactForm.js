@@ -6,6 +6,7 @@ const Container = styled.div`
   flex-grow: 1;
   margin: 20px;
   height: 100px;
+  background-color: white;
 `;
 
 const ContactForm = props => {

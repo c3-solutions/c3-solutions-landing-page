@@ -4,6 +4,10 @@
   --main-color-three: rgb(0, 0, 0);
 }
 
+html {
+  margin: 0px 0px 0px 0px;
+}
+
 html,
 body {
   margin: 0;

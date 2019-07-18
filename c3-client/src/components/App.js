@@ -6,7 +6,10 @@ import NavBar from "./NavBar";
 import { Github} from "../requests";
 // import Footer from "./Footer";
 
-const Container = styled.div``;
+const Container = styled.div`
+  background-color: rgb(0, 0, 0);
+  height: 100vh;
+`;
 
 function App() {
   let [members, setMembers] = useState([]);
