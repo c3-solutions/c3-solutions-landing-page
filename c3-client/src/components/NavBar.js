@@ -77,9 +77,13 @@ export default class NavBar extends React.Component {
                 PORTFOLIO
               </Link>
             </NavItem>
+            {/* 
+            
+            Possible future OAuth login
+            
             <NavItem>
-              <a href="https://github.com/login/oauth/authorize?client_id=d240d9f9a8908bc39b20&scope=user%20public_repo">Alumni</a>
-            </NavItem>
+              <a href="https://github.com/login/oauth/authorize?client_id=d240d9f9a8908bc39b20&scope=user%20public_repo%20read:org">Alumni</a>
+            </NavItem> */}
           </Links>
         </Container>
       </Nav>
