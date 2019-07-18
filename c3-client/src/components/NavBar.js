@@ -9,8 +9,8 @@ const Nav = styled.div`
 `;
 
 const Container = styled.div`
-  padding: 1rem;
-  background-color: rgb(0, 149, 255);
+  padding: .7rem;
+  background-color: rgb(0, 0, 0);
   display: flex;
 `;
 
@@ -27,13 +27,16 @@ const Links = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: rgb(255, 255, 255);
+  font-family: Helvetica;
+  font-size: 24px;
 `;
 
-const NavItem = styled.li`
+const NavItem = styled.div`
   display: inline;
   margin-left: 2rem;
   &:hover {
-    color: rgb(255, 0, 0);
+    border-bottom: 5px solid rgb(0, 149, 255);
     cursor: pointer;
   }
 `;
@@ -77,6 +80,13 @@ export default class NavBar extends React.Component {
                 PORTFOLIO
               </Link>
             </NavItem>
+            {/* 
+            
+            Possible future OAuth login
+            
+            <NavItem>
+              <a href="https://github.com/login/oauth/authorize?client_id=d240d9f9a8908bc39b20&scope=user%20public_repo%20read:org">Alumni</a>
+            </NavItem> */}
           </Links>
         </Container>
       </Nav>
