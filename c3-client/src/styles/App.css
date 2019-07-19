@@ -1,0 +1,11 @@
+/* For Sticky Navbar */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .main {
+  margin-top: 70px;
+}

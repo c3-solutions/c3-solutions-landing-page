@@ -23,16 +23,16 @@ const Underline = styled.div`
   border-bottom: 5px solid rgb(0, 149, 255);
 `;
 
-const AboutUs = props => {
+const Team = props => {
   return( 
     <Container className="about">
       <Underline>
         <Heading>
-          About Us
+          Code Core Alumni
         </Heading>
       </Underline>
     </Container>
   )
 }
 
-export default AboutUs; 
+export default Team; 
