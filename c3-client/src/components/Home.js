@@ -16,7 +16,7 @@ const Home = props => {
   return (
     <Container className="main">
       <AboutUs />
-      <Team />
+      <Team team={props.c3Members}/>
       <ContactForm />
     </Container>
   );
