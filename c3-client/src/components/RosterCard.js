@@ -10,8 +10,10 @@ const Card = styled.div`
   display: flex;
   flex-direction: row;
   height: 250px;
-  @media (min-width: 700px) {
-    width: 45vw;
+  width: 500px;
+  margin: 20px 20px 20px 20px;
+  @media (max-width: 700px) {
+    width: 300px;
   }
 `;
 
@@ -20,6 +22,10 @@ const Image = styled.img`
   height: 200px;
   margin: 20px 0 0 0;
   width: 200px;
+  @media (max-width: 700px) {
+    height: 100px;
+    width: 100px;
+  }
 `;
 
 const Info = styled.div`
@@ -68,11 +74,9 @@ const RosterCard = (props) => {
       <Info>
         <Name>{fullname}</Name>
         <Note>{note}</Note>
-        {/* <Icons>
-          <a href={`mailtio:${email}`}>
-            <p>{email}</p>
+          <a href={website}>
+            {website}
           </a>
-        </Icons> */}
       </Info>
     </Card>
   );

@@ -26,6 +26,8 @@ const Underline = styled.div`
 const Members = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 0 0 0;
 `;
 
 const Team = props => {
@@ -40,12 +42,13 @@ const Team = props => {
         {
           props.team.map((member) => (
             <RosterCard
-              key={member.id}
-              pic={member.avatar_url}
-              fullname={member.name}
-              github={member.html_url}
-              note={member.bio}
-              email={member.email}
+              key={member.node.id}
+              pic={member.node.avatarUrl}
+              fullname={member.node.name}
+              github={member.node.url}
+              note={member.node.bio}
+              email={member.node.email}
+              website={member.node.websiteUrl}
             />
           ))
         }
