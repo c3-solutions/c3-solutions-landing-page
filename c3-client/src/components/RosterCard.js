@@ -65,6 +65,7 @@ const GHLogo = styled.img`
   }
 `;
 
+
 const RosterCard = (props) => {
   // can probably get info/pic from github api
   let { fullname, pic, note, github, website, email } = props;
