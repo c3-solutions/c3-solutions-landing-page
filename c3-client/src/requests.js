@@ -1,10 +1,11 @@
-const BASE_URL = 'http://localhost:5000/api';
+const conf = require('./config.js');
 
 export const Github = {
   async getMembers() {
     try {
-      const response = await fetch(`${BASE_URL}/github/members`, {
-        credentials: 'include'
+      const response = await fetch(`https://jwb4zsu9m2.execute-api.us-east-1.amazonaws.com/dev/members`, {
+        headers: {'Authorization': conf.token}
+        //credentials: 'include' // This is not necessary for serverless in a simple requests i.e. GET
       });
       const json = await response.json();
       return json;

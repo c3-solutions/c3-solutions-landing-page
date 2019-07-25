@@ -9,16 +9,23 @@ const Card = styled.div`
   border-radius: 4%;
   display: flex;
   flex-direction: row;
-  @media (min-width: 700px) {
-    width: 45vw;
+  height: 250px;
+  width: 500px;
+  margin: 20px 20px 20px 20px;
+  @media (max-width: 700px) {
+    width: 300px;
   }
 `;
 
 const Image = styled.img`
-  clip-path: circle(40% at center);
-  height: 100%;
-  margin: 4em 0;
-  width: 30%;
+  border-radius: 50%;
+  height: 200px;
+  margin: 20px 0 0 0;
+  width: 200px;
+  @media (max-width: 700px) {
+    height: 100px;
+    width: 100px;
+  }
 `;
 
 const Info = styled.div`
@@ -58,23 +65,19 @@ const GHLogo = styled.img`
   }
 `;
 
+
 const RosterCard = (props) => {
   // can probably get info/pic from github api
-  let { fullname, pic, note, github, website } = props;
+  let { fullname, pic, note, github, website, email } = props;
   return (
     <Card>
       <Image src={pic ? pic : c3logo} alt={`${fullname}'s profile`} />
       <Info>
         <Name>{fullname}</Name>
         <Note>{note}</Note>
-        <Icons>
-          <a href={`http://github.com/${github}`}>
-            <GHLogo src={GHpng} />
-          </a>
           <a href={website}>
-            <p>{website}</p>
+            {website}
           </a>
-        </Icons>
       </Info>
     </Card>
   );
