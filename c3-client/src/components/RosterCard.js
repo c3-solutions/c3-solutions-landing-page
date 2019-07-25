@@ -18,7 +18,7 @@ const Card = styled.div`
 `;
 
 const Image = styled.img`
-  clip-path: circle(40% at center);
+  border-radius: 50%;
   height: 200px;
   margin: 20px 0 0 0;
   width: 200px;
@@ -64,6 +64,7 @@ const GHLogo = styled.img`
     border: thin solid black;
   }
 `;
+
 
 const RosterCard = (props) => {
   // can probably get info/pic from github api

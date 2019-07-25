@@ -30,7 +30,15 @@ const Members = styled.div`
   margin: 40px 0 0 0;
 `;
 
+
 const Team = props => {
+  if (!props.team) {
+    return (
+      <div>
+      </div>
+    )
+  }
+
   return( 
     <Container className="about">
       <Underline>
