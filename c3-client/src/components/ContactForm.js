@@ -283,10 +283,10 @@ const ContactForm = withFormik({
     otherFeature,
   }) {
     return {
-      name: name || '',
-      email: email || '',
+      name: name || 'asd',
+      email: email || 'a@a.com',
       organization: organization || '',
-      message: message || '',
+      message: message || 'asdf',
       hasURL: hasURL || '',
       url: url || '',
       hasDeadline: hasDeadline || '',
@@ -323,7 +323,58 @@ const ContactForm = withFormik({
       }),
   }),
   handleSubmit(values) {
-    console.log(values);
+    return fetch(`https://hooks.slack.com/services/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`, {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json, text/plain, */*'
+      },
+      body: JSON.stringify({
+        "blocks": [
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": "Hey c3-Solutions, you've recieved a new inquiry for a project!",
+            }
+          },
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": `*Name:*\n${values.name}`,
+            }
+          },
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": `*Email:*\n${values.email}`,
+            }
+          },
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": `*Organization:*\n${values.organization || 'none'}`,
+            }
+          },
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": `*Message:*\n${values.message}`,
+            }
+          },
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": `*Website:*\n${values.url || "None"}`,
+            }
+          },
+        ],
+      })
+    });
   },
 })(ContactSection);
 
