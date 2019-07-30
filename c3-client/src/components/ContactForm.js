@@ -13,13 +13,13 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 4em 0px 0px 0px;
-  font-family: "Chakra Petch", sans-serif;
 `;
 
 const Heading = styled.h1`
   color: rgb(255, 255, 255);
   margin: 0px 0px 0px 0px;
   font-size: 50px;
+  font-family: "Chakra Petch", sans-serif;
 `;
 
 const Underline = styled.div`
@@ -292,36 +292,6 @@ const ContactSection = ({
           <Error visible={touched.deadline && errors.deadline}>
             {errors.deadline}
           </Error>
-          <Text>What features are required for this project?</Text>
-          {Array.from({ length: 5 }).map((value, index) => (
-            <CheckboxContainer key={index}>
-              <input type="checkbox" hidden />
-              <Checkbox />
-              Feature
-            </CheckboxContainer>
-          ))}
-          <CheckboxContainer>
-            <input
-              type="checkbox"
-              name="hasOtherFeature"
-              value={true}
-              onChange={handleChange}
-              hidden
-            />
-            <Checkbox />
-            Other Feature (please specify)
-          </CheckboxContainer>
-          <Input
-            name="otherFeature"
-            value={values.otherFeature}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            touchedError={touched.otherFeature && errors.otherFeature}
-            disabled={!values.hasOtherFeature}
-          />
-          <Error visible={touched.otherFeature && errors.otherFeature}>
-            {errors.otherFeature}
-          </Error>
         </Details>
         <div style={{ textAlign: "center" }}>
           <Submit type="submit">Send</Submit>
@@ -345,16 +315,14 @@ const ContactForm = withFormik({
     otherFeature
   }) {
     return {
-      name: name || "asd",
-      email: email || "a@a.com",
+      name: name || "",
+      email: email || "",
       organization: organization || "",
-      message: message || "asdf",
+      message: message || "",
       hasURL: hasURL || "",
       url: url || "",
       hasDeadline: hasDeadline || "",
-      deadline: deadline || "",
-      hasOtherFeature: hasOtherFeature || false,
-      otherFeature: otherFeature || ""
+      deadline: deadline || ""
     };
   },
   validationSchema: Yup.object().shape({
@@ -373,11 +341,6 @@ const ContactForm = withFormik({
     deadline: Yup.string().when("hasDeadline", {
       is: "yes",
       then: Yup.string().required("Deadline is required")
-    }),
-    hasOtherFeature: Yup.boolean(),
-    otherFeature: Yup.string().when("hasOtherFeature", {
-      is: true,
-      then: Yup.string().required("Please specify your feature")
     })
   }),
   handleSubmit(values) {

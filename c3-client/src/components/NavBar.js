@@ -55,8 +55,10 @@ const NavBar = (props) => {
     function myFunction() {
       if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky")
+        navbar.classList.remove("hide");
       } else {
         navbar.classList.remove("sticky");
+        navbar.classList.add("hide");
       }
     }
   }
