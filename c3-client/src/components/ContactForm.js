@@ -6,7 +6,7 @@ import * as Yup from "yup";
 const Container = styled.div`
   display: flex;
   flex-shrink: 0.25;
-  margin: 0px;
+  margin: 0px 0px 0px 0px;
   height: 100vh;
   background-color: black;
   color: white;
@@ -78,6 +78,7 @@ const Submit = styled.button`
   justify-self: left;
   text-transform: uppercase;
   padding: 10px 25px;
+  margin: 0 0 40px 0;
   border: none;
   border-radius: 3px;
   background-color: rgb(0, 149, 255);
