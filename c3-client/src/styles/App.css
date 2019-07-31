@@ -1,9 +1,16 @@
 /* For Sticky Navbar */
 
+.hide {
+  opacity: 0;
+  transition: .5s;
+}
+
 .sticky {
+  opacity: 1;
   position: fixed;
   top: 0;
   width: 100%;
+  transition: .5s;
 }
 
 .sticky + .main {
