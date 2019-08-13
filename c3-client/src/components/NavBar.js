@@ -31,8 +31,9 @@ const Links = styled.div`
 
 const NavItem = styled.div`
   display: inline;
-  margin-left: 2rem;
+  margin: 0 1rem;
   &:hover {
+    margin-bottom: -5px;
     border-bottom: 5px solid rgb(0, 149, 255);
     cursor: pointer;
   }
