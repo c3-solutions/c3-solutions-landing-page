@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { withFormik } from "formik";
 import * as Yup from "yup";
+import config from '../config';
 
 const Container = styled.div`
   display: flex;
@@ -346,7 +347,7 @@ const ContactForm = withFormik({
   }),
   handleSubmit(values) {
     return fetch(
-      `https://hooks.slack.com/services/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`,
+      config.webhookURL,
       {
         method: "POST",
         headers: {

@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { NavLink } from "react-router-dom";
 
-const Nav = styled.div`
-
-`;
+const Nav = styled.div``;
 
 const Container = styled.div`
   padding: .7rem;
@@ -20,7 +19,6 @@ const Logo = styled.img`
   }
 `;
 
-
 const Links = styled.div`
   margin-left: auto;
   display: flex;
@@ -33,12 +31,15 @@ const Links = styled.div`
 
 const NavItem = styled.div`
   display: inline;
-  margin-left: 2rem;
+  margin: 0 1rem;
   &:hover {
+    margin-bottom: -5px;
     border-bottom: 5px solid rgb(0, 149, 255);
     cursor: pointer;
   }
 `;
+
+const NavBarLink = styled(NavLink)`all: unset;`;
 
 const NavBar = (props) => {
 
@@ -77,28 +78,27 @@ const NavBar = (props) => {
         />
         <Links>
           <NavItem>
-            <Link
-              activeClass="active"
-              to="team"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              THE TEAM
-            </Link>
+            <NavBarLink exact to="/">
+              HOME
+            </NavBarLink>
           </NavItem>
           <NavItem>
-            <Link
-              activeClass="active"
-              to="portfolio"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
+              <Link
+                activeClass="active"
+                to="team"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                <NavBarLink exact to="/">
+                  THE TEAM
+                </NavBarLink>
+              </Link>
+          </NavItem>
+          <NavItem>
+            <NavBarLink exact to="/portfolio">
               PORTFOLIO
-            </Link>
+            </NavBarLink>
           </NavItem>
           {/* 
           

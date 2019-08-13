@@ -40,7 +40,7 @@ const Team = props => {
   }
 
   return( 
-    <Container className="about">
+    <Container id="team">
       <Underline>
         <Heading>
           Code Core Alumni
