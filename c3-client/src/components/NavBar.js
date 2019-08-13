@@ -82,16 +82,17 @@ const NavBar = (props) => {
             </NavBarLink>
           </NavItem>
           <NavItem>
-            <Link
-              activeClass="active"
-              to="team"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              THE TEAM
-            </Link>
+              <Link
+                activeClass="active"
+                to="team"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                <NavBarLink exact to="/">
+                  THE TEAM
+                </NavBarLink>
+              </Link>
           </NavItem>
           <NavItem>
             <NavBarLink exact to="/portfolio">

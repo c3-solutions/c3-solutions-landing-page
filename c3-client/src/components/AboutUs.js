@@ -23,7 +23,7 @@ const Underline = styled.div`
 `;
 
 const Text = styled.div`
-  max-width: 600px;
+  max-width: 900px;
   font-size: 24px;
 `;
 

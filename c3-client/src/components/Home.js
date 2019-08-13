@@ -41,15 +41,15 @@ const Home = props => {
             }}
             src={require("../assets/images/c3.png")}
             alt="C-Cubed"
-            />
+          />
         <Heading>
           CUBED
         </Heading>
         </Logo>
       </div>
       <AboutUs />
-      <Team team={props.c3Members}/>
       <ContactForm />
+      <Team team={props.c3Members}/>
     </Container>
   );
 };
