@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { NavLink } from "react-router-dom";
 
-const Nav = styled.div`
-
-`;
+const Nav = styled.div``;
 
 const Container = styled.div`
   padding: .7rem;
@@ -19,7 +18,6 @@ const Logo = styled.img`
     cursor: pointer;
   }
 `;
-
 
 const Links = styled.div`
   margin-left: auto;
@@ -39,6 +37,8 @@ const NavItem = styled.div`
     cursor: pointer;
   }
 `;
+
+const NavBarLink = styled(NavLink)`all: unset;`;
 
 const NavBar = (props) => {
 
@@ -77,6 +77,11 @@ const NavBar = (props) => {
         />
         <Links>
           <NavItem>
+            <NavBarLink exact to="/">
+              HOME
+            </NavBarLink>
+          </NavItem>
+          <NavItem>
             <Link
               activeClass="active"
               to="team"
@@ -89,16 +94,9 @@ const NavBar = (props) => {
             </Link>
           </NavItem>
           <NavItem>
-            <Link
-              activeClass="active"
-              to="portfolio"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
+            <NavBarLink exact to="/portfolio">
               PORTFOLIO
-            </Link>
+            </NavBarLink>
           </NavItem>
           {/* 
           
